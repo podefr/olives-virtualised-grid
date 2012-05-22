@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Olives infinite scrolling demo</title>
+		<meta name="description" content="A demonstration of infinite scrolling with Olives">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			
+			<ul data-model="foreach: list,0,10">
+				<li data-model="bind: innerHTML"></li>
+			</ul>
+			
+		</div>
+		<script src="libs/require.js"></script>
+		<script src="libs/emily.js"></script>
+		<script src="libs/olives.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
