@@ -1,30 +1,45 @@
-require(["Store", "Olives/OObject","Olives/Model-plugin"],
-		
-function (Store, OObject, ModelPlugin) {
+require(["Store", "OObject","Bind.plugin", "Event.plugin"],
+
+function (Store, OObject, Bind, Event) {
 
 	var data = [],
-		modelPlugin,
+		bind,
 		i = 0,
-		list;
-	
+		ptr = 0,
+		list,
+		move = function (idx) {
+			ls = bind.getItemRenderer("list");
+			ls.setStart(idx);
+			ls.render();
+		},
+		view = document.querySelector(".container");
+
 	for (; i<100000; i++) {
 		data.push("row #" + i);
 	}
 
 	list = new OObject(new Store(data));
-	
-	modelPlugin = new ModelPlugin(list.model);
 
-	list.plugins.add("model", modelPlugin);
-	
-	list.alive(document.querySelector(".container"));
+	bind = new Bind(list.model);
 
-	/**
-	 * ls = modelPlugin.getItemRenderer("list")
-	 * ls.setStart( increase value )
-	 * ls.render();
-	 * 
-	 * 
-	 */
-	
+	list.plugins.addAll({
+		"model": bind,
+		"event": new Event(list)
+	});
+
+	list.alive(view);
+
+	list.moveUp = function moveUp() {
+		move(++ptr);
+	};
+
+	list.moveDown = function moveDown() {
+		(ptr > 0) && move(--ptr);
+	};
+
+	list.jump = function jump(event) {
+		event.preventDefault();
+		move(ptr = view.querySelector("input[type='text']").value);
+	};
+
 });

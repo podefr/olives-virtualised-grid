@@ -9,15 +9,23 @@
 	</head>
 	<body>
 		<div class="container">
-			
-			<ul data-model="foreach: list,0,10">
+
+			<a data-event="listen: click, moveDown">Move Down</a>
+			<ul data-model="foreach: list,0,9">
 				<li data-model="bind: innerHTML"></li>
 			</ul>
-			
+			<a data-event="listen: click, moveUp">Move Up</a>
+
+			<form data-event="listen: submit, jump">
+				<input type="text" placeholder="jump to..." />
+				<input type="submit" />
+			</form>
+
+
 		</div>
 		<script src="libs/require.js"></script>
-		<script src="libs/emily.js"></script>
-		<script src="libs/olives.js"></script>
+		<script src="libs/Emily.min.js"></script>
+		<script src="libs/Olives.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
