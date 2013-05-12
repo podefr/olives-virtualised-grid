@@ -8,12 +8,15 @@
 		<link href="css/main.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="container">
+		<div class="page">
 
 			<a data-event="listen: click, moveDown">Move Down</a>
-			<ul data-model="foreach: list,0,9">
-				<li data-model="bind: innerHTML"></li>
-			</ul>
+			<div class="container">
+				<ul data-model="foreach: list,0,9">
+					<li data-model="bind: innerHTML"></li>
+				</ul>
+				<div class="container-virtual-area"></div>
+			</div>
 			<a data-event="listen: click, moveUp">Move Up</a>
 
 			<form data-event="listen: submit, jump">

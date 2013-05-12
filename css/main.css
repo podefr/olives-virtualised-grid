@@ -7,22 +7,26 @@ body {
 	background-color: #ccc;
 }
 
-.container {
+.page {
 	margin: 20px
 }
 
-ul {
+.container {
 	width: 600px;
 	height: 300px;
-	overflow: hidden;
+	overflow: auto;
 	margin: 10px;
 	margin-left: 0px;
 }
 
-li {
+.container li {
 	margin-top: 1px;
 	padding: 10px;
 	background-color: white;
 	box-shadow: 1px 1px 1px grey;
 	height: 20px;
+}
+
+.container-virtual-area {
+	height: 4000000px;
 }
