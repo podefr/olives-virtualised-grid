@@ -1,8 +1,0 @@
-{
-  "name": "olives",
-  "version": "1.4.1",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/flams/olives.git"
-  }
-}
