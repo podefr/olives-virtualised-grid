@@ -1,0 +1,38 @@
+{
+ "name": "olives",
+ "description": "A JS Framework for creating realtime and scalable web applications. Based on Emily.js and socket.io",
+ "version": "1.4.1",
+ "homepage": "http://flams.github.com/olives/",
+ "licenses": [{
+  "type":"MIT",
+  "url":"https://raw.github.com/flams/olives/master/LICENSE"
+ }],
+ "files": [
+   "LICENSE",
+   "olives-server.js",
+   "build"
+ ],
+ "author": "Olivier Scherrer <pode.fr@gmail.com>",
+ "contributors": [
+ 	"Olivier Scherrer <pode.fr@gmail.com>",
+ 	"Olivier Wietrich <olivier.wietrich@gmail.com"
+ ],
+ "dependencies": {
+  "requirejs": ">=2.1.5",
+  "emily": ">=1.3.5",
+  "socket.io": ">=0.9.6"
+  },
+ "keywords": ["framework", "web", "realtime", "UI", "MVC", "scalable", "AMD/commonJS"],
+ "repository": {
+  "type": "git",
+  "url": "git@github.com:flams/olives.git"
+ },
+ "bugs": {
+  "url": "https://github.com/flams/olives/issues"
+ },
+ "main":"olives-server.js",
+ "engines": {
+ 	"node":">= 0.8.0"
+ }
+
+}
