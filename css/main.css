@@ -17,6 +17,13 @@ body {
 	overflow: auto;
 	margin: 10px;
 	margin-left: 0px;
+	position: relative;
+}
+
+.container ul {
+	position: fixed;
+		width: 600px;
+	height: 300px;
 }
 
 .container li {
@@ -28,5 +35,6 @@ body {
 }
 
 .container-virtual-area {
-	height: 4000000px;
+	height: 2000000px;
+	position: relative;
 }

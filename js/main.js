@@ -8,9 +8,12 @@ function (Store, OObject, Bind, Event) {
 		ptr = 0,
 		list,
 		move = function (idx) {
-			ls = bind.getItemRenderer("list");
+			var ls = bind.getItemRenderer("list");
 			ls.setStart(idx);
 			ls.render();
+		},
+		moveToIndex = function () {
+			move(Math.floor(this.scrollTop / 20));
 		},
 		view = document.querySelector(".container");
 
@@ -41,5 +44,9 @@ function (Store, OObject, Bind, Event) {
 		event.preventDefault();
 		move(ptr = view.querySelector("input[type='text']").value);
 	};
+
+	var self = this;
+
+	document.querySelector(".container").onscroll = moveToIndex;
 
 });
