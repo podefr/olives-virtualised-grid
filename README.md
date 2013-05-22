@@ -1,6 +1,6 @@
 ##An example of infinite scroll using Olives
 
-Demo page : file:///Users/olivierscherrer/Documents/workspace/olives-infinite-scroll/index.html
+Demo page : http://podefr.github.io/olives-virtualised-grid/
 
 
 This is a simple example of an application using the virtualisation feature of the data-binding plugin.
@@ -20,12 +20,14 @@ It's based on Emily, Olives, and require.js for loading each module.
 			<td>Date</td>
 		</tr>
 	</thead>
+	<!-- loops over all the items, starting from 0, only display 9 and virtualise the rest -->
 	<tbody data-model="foreach: list,0,9">
 		<tr>
 			<td data-model="bind: innerHTML, id"></td>
 			<td data-model="bind: innerHTML, continent"></td>
 			<td data-model="bind: innerHTML, color"></td>
 			<td data-model="bind: innerHTML, quantity"></td>
+			<!-- we can bind data to any attribute, or to a specific formatter -->
 			<td data-model="bind: formatDate, date"></td>
 		</tr>
 	</tbody>
