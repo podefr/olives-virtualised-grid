@@ -45,8 +45,6 @@ function (Store, OObject, Bind, Event) {
 
 	list.alive(view);
 
-	var self = this;
-
 	document.querySelector(".container").onscroll = moveToIndex;
 
 });
