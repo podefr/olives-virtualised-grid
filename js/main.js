@@ -7,18 +7,31 @@ function (Store, OObject, Bind, Event) {
 		i = 0,
 		ptr = 0,
 		list,
-		move = function (idx) {
-			var ls = bind.getItemRenderer("list");
-			ls.setStart(idx);
-			ls.render();
-		},
-		moveToIndex = function () {
-			move(Math.floor(this.scrollTop / 20));
-		},
 		view = document.querySelector(".container");
 
+	function move(idx) {
+		var ls = bind.getItemRenderer("list");
+		ls.setStart(idx);
+		ls.render();
+	}
+
+	function moveToIndex() {
+		move(Math.floor(this.scrollTop / 20));
+	}
+
+	function pick(array) {
+		return array[Math.floor(Math.random() * array.length)]
+	}
+
 	for (; i<100000; i++) {
-		data.push("row #" + i);
+		data.push({
+			"tradeId" : i,
+			"direction": pick(["Buy", "Sell"]),
+			"baseCCY": pick(["USD", "EUR", "GBP"]),
+			"variableCCY": pick(["JPY", "AUD", "CHF"]),
+			"rate": "1." + Math.floor(Math.random() * 1000),
+			"valueDate": (new Date().getTime())
+		});
 	}
 
 	list = new OObject(new Store(data));
@@ -31,19 +44,6 @@ function (Store, OObject, Bind, Event) {
 	});
 
 	list.alive(view);
-
-	list.moveUp = function moveUp() {
-		move(++ptr);
-	};
-
-	list.moveDown = function moveDown() {
-		(ptr > 0) && move(--ptr);
-	};
-
-	list.jump = function jump(event) {
-		event.preventDefault();
-		move(ptr = view.querySelector("input[type='text']").value);
-	};
 
 	var self = this;
 

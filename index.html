@@ -10,19 +10,19 @@
 	<body>
 		<div class="page">
 
-			<a data-event="listen: click, moveDown">Move Down</a>
 			<div class="container">
-				<ul data-model="foreach: list,0,9">
-					<li data-model="bind: innerHTML"></li>
-				</ul>
+				<table data-model="foreach: list,0,9">
+					<tr>
+						<td data-model="bind: innerHTML, tradeId"></td>
+						<td data-model="bind: innerHTML, direction"></td>
+						<td data-model="bind: innerHTML, baseCCY"></td>
+						<td data-model="bind: innerHTML, variableCCY"></td>
+						<td data-model="bind: innerHTML, rate"></td>
+						<td data-model="bind: innerHTML, valueDate"></td>
+					</tr>
+				</table>
 				<div class="container-virtual-area"></div>
 			</div>
-			<a data-event="listen: click, moveUp">Move Up</a>
-
-			<form data-event="listen: submit, jump">
-				<input type="text" placeholder="jump to..." />
-				<input type="submit" />
-			</form>
 
 
 		</div>

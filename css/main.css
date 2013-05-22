@@ -20,13 +20,12 @@ body {
 	position: relative;
 }
 
-.container ul {
+.container table {
 	position: fixed;
-		width: 600px;
-	height: 300px;
+	width: 600px;
 }
 
-.container li {
+.container tr {
 	margin-top: 1px;
 	padding: 10px;
 	background-color: white;
