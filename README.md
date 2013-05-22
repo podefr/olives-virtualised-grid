@@ -50,6 +50,8 @@ for (; i<100000; i++) {
 
 ### The js for applying the data to the HTML
 
+Most of the cells are assigned the value via the innerHTML property, but the data has it's own formatter which is shown here
+
 ```js
 new Bind(list.model, {
 	formatDate: function (timestamp) {
