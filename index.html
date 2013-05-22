@@ -11,15 +11,27 @@
 		<div class="page">
 
 			<div class="container">
-				<table data-model="foreach: list,0,9">
-					<tr>
-						<td data-model="bind: innerHTML, tradeId"></td>
-						<td data-model="bind: innerHTML, direction"></td>
-						<td data-model="bind: innerHTML, baseCCY"></td>
-						<td data-model="bind: innerHTML, variableCCY"></td>
-						<td data-model="bind: innerHTML, rate"></td>
-						<td data-model="bind: innerHTML, valueDate"></td>
-					</tr>
+				<table>
+					<thead>
+						<tr>
+							<td>Trade ID</td>
+							<td>Direction</td>
+							<td>Base CCY</td>
+							<td>Variable CCY</td>
+							<td>Rate</td>
+							<td>Value Date</td>
+						</tr>
+					</thead>
+					<tbody data-model="foreach: list,0,9">
+						<tr>
+							<td data-model="bind: innerHTML, tradeId"></td>
+							<td data-model="bind: innerHTML, direction"></td>
+							<td data-model="bind: innerHTML, baseCCY"></td>
+							<td data-model="bind: innerHTML, variableCCY"></td>
+							<td data-model="bind: innerHTML, rate"></td>
+							<td data-model="bind: formatDate, valueDate"></td>
+						</tr>
+					</tbody>
 				</table>
 				<div class="container-virtual-area"></div>
 			</div>

@@ -36,7 +36,11 @@ function (Store, OObject, Bind, Event) {
 
 	list = new OObject(new Store(data));
 
-	bind = new Bind(list.model);
+	bind = new Bind(list.model, {
+		formatDate: function (timestamp) {
+			this.innerHTML = new Date(timestamp).toISOString();
+		}
+	});
 
 	list.plugins.addAll({
 		"model": bind,

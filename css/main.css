@@ -33,6 +33,12 @@ body {
 	height: 20px;
 }
 
+.container thead tr {
+	background-color: darkgrey;
+	color: white;
+	font-weight: bold;
+}
+
 .container-virtual-area {
 	height: 2000000px;
 	position: relative;
