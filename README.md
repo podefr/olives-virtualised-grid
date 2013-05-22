@@ -1,6 +1,6 @@
 ##An example of infinite scroll using Olives
 
-Demo page : file:///Users/olivierscherrer/Documents/workspace/olives-infinite-scroll/index.html
+Demo page : http://podefr.github.io/olives-virtualised-grid/
 
 
 This is a simple example of an application using the virtualisation feature of the data-binding plugin.
