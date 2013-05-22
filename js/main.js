@@ -25,12 +25,11 @@ function (Store, OObject, Bind, Event) {
 
 	for (; i<100000; i++) {
 		data.push({
-			"tradeId" : i,
-			"direction": pick(["Buy", "Sell"]),
-			"baseCCY": pick(["USD", "EUR", "GBP"]),
-			"variableCCY": pick(["JPY", "AUD", "CHF"]),
-			"rate": "1." + Math.floor(Math.random() * 1000),
-			"valueDate": (new Date().getTime())
+			"id" : i,
+			"continent": pick(["North America", "Europe", "South America", "Africa", "Antartica", "Australia", "Asia"]),
+			"color": pick(["yellow", "red", "lightblue"]),
+			"quantity": Math.floor(Math.random() * 100000),
+			"date": (new Date().getTime())
 		});
 	}
 
