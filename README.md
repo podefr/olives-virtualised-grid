@@ -1,4 +1,4 @@
-##An example of infinite scroll using Olives
+##An example of a virtualised Grid using Olives' data binding plugin
 
 Demo page : http://podefr.github.io/olives-virtualised-grid/
 
