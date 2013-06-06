@@ -1,4 +1,4 @@
-##An example of infinite scroll using Olives
+##An example of a virtualised Grid using Olives' data binding plugin
 
 Demo page : http://podefr.github.io/olives-virtualised-grid/
 
@@ -49,6 +49,8 @@ for (; i<100000; i++) {
 ```
 
 ### The js for applying the data to the HTML
+
+Most of the cells are assigned the value via the innerHTML property, but the data has it's own formatter which is shown here
 
 ```js
 new Bind(list.model, {
