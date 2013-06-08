@@ -12,8 +12,8 @@ body {
 }
 
 .container {
-	width: 600px;
-	height: 300px;
+	height: 650px;
+	width: 850px;
 	overflow: auto;
 	margin: 10px;
 	margin-left: 0px;
@@ -22,7 +22,6 @@ body {
 
 .container table {
 	position: fixed;
-	width: 600px;
 }
 
 .container tr {
@@ -39,7 +38,11 @@ body {
 	font-weight: bold;
 }
 
+.container td {
+	padding: 5px;
+}
+
 .container-virtual-area {
-	height: 2000000px;
+	height: 20000280px;
 	position: relative;
 }
