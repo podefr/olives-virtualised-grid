@@ -23,13 +23,18 @@ function (Store, OObject, Bind, Event) {
 		return array[Math.floor(Math.random() * array.length)]
 	}
 
-	for (; i<100000; i++) {
+	for (; i<=1000000; i++) {
 		data.push({
 			"id" : i,
 			"continent": pick(["North America", "Europe", "South America", "Africa", "Antartica", "Australia", "Asia"]),
 			"color": pick(["yellow", "red", "lightblue"]),
-			"quantity": Math.floor(Math.random() * 100000),
-			"date": (new Date().getTime())
+			"quantity1": Math.floor(Math.random() * 100000),
+			"quantity2": Math.floor(Math.random() * 100000),
+			"quantity3": Math.floor(Math.random() * 100000),
+			"quantity4": Math.floor(Math.random() * 100000),
+			"date": (new Date().getTime()),
+			"fruit": pick(["banana", "apple", "pear"]),
+			"name": pick(["olivier", "pierre", "lucien"])
 		});
 	}
 
