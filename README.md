@@ -17,33 +17,46 @@ It's based on Emily, Olives, and require.js for loading each module.
 			<td>Continent</td>
 			<td>Color</td>
 			<td>Quantity</td>
+			<td>Quantity</td>
+			<td>Quantity</td>
+			<td>Quantity</td>
 			<td>Date</td>
+			<td>fruit</td>
+			<td>name</td>
 		</tr>
 	</thead>
-	<!-- loops over all the items, starting from 0, only display 9 and virtualise the rest -->
-	<tbody data-model="foreach: list,0,9">
+	<tbody data-model="foreach: list,0,20">
 		<tr>
 			<td data-model="bind: innerHTML, id"></td>
 			<td data-model="bind: innerHTML, continent"></td>
 			<td data-model="bind: innerHTML, color"></td>
-			<td data-model="bind: innerHTML, quantity"></td>
-			<!-- we can bind data to any attribute, or to a specific formatter -->
+			<td data-model="bind: innerHTML, quantity1"></td>
+			<td data-model="bind: innerHTML, quantity2"></td>
+			<td data-model="bind: innerHTML, quantity3"></td>
+			<td data-model="bind: innerHTML, quantity4"></td>
 			<td data-model="bind: formatDate, date"></td>
+			<td data-model="bind: innerHTML, fruit"></td>
+			<td data-model="bind: innerHTML, name"></td>
 		</tr>
 	</tbody>
 </table>
 ```
 
-### The 100,000 rows
+### The 1,000,000 rows
 
 ```js
-for (; i<100000; i++) {
+for (; i<=1000000; i++) {
 	data.push({
 		"id" : i,
 		"continent": pick(["North America", "Europe", "South America", "Africa", "Antartica", "Australia", "Asia"]),
 		"color": pick(["yellow", "red", "lightblue"]),
-		"quantity": Math.floor(Math.random() * 100000),
-		"date": (new Date().getTime())
+		"quantity1": Math.floor(Math.random() * 100000),
+		"quantity2": Math.floor(Math.random() * 100000),
+		"quantity3": Math.floor(Math.random() * 100000),
+		"quantity4": Math.floor(Math.random() * 100000),
+		"date": (new Date().getTime()),
+		"fruit": pick(["banana", "apple", "pear"]),
+		"name": pick(["olivier", "pierre", "lucien"])
 	});
 }
 ```
@@ -53,11 +66,21 @@ for (; i<100000; i++) {
 Most of the cells are assigned the value via the innerHTML property, but the data has it's own formatter which is shown here
 
 ```js
-new Bind(list.model, {
+var list = new OObject(new Store(data));
+
+var bind = new Bind(list.model, {
+	// formatDate is executed after the row was created
 	formatDate: function (timestamp) {
 		this.innerHTML = new Date(timestamp).toISOString();
 	}
 });
+
+list.plugins.addAll({
+	// Add data binding to the view
+	"model": bind
+});
+
+list.alive(view);
 ```
 
 
