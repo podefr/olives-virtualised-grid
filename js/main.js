@@ -1,6 +1,6 @@
-require(["Store", "OObject","Bind.plugin", "Event.plugin"],
+require(["Store", "OObject","Bind.plugin"],
 
-function (Store, OObject, Bind, Event) {
+function (Store, OObject, Bind) {
 
 	var data = [],
 		bind,
@@ -47,8 +47,7 @@ function (Store, OObject, Bind, Event) {
 	});
 
 	list.plugins.addAll({
-		"model": bind,
-		"event": new Event(list)
+		"model": bind
 	});
 
 	list.alive(view);
